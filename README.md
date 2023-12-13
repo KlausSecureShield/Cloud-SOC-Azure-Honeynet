@@ -40,35 +40,41 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 ## Metrics Before Hardening / Security Controls
 
-The following table shows the metrics we measured in our insecure environment for 24 hours:
-Start Time 2023-03-15 17:04:29
-Stop Time 2023-03-16 17:04:29
+The following table shows the metrics I measured in my insecure environment inside Microsoft Azure for 24 hours:
+Start Time 2023-12-09 14:43:24
+Stop Time 2023-12-10 14:43:24
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 19470
-| Syslog                   | 3028
-| SecurityAlert            | 10
-| SecurityIncident         | 348
-| AzureNetworkAnalytics_CL | 843
+| SecurityEvent            | 13338
+| Syslog                   | 13736
+| SecurityAlert            | 18
+| SecurityIncident         | 159
 
-## Attack Maps Before Hardening / Security Controls
+## Attack Maps After Hardening / Notes
 
-```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening.```
+```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening. A few attacks did register at the beginning of the hardening process, they occured due to bots that were relentlessly spamming the exposed (open to the internet) Windows and Linux VMs during the hardening transition and stopped occuring after hardening was completed.```
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics we measured in our environment for another 24 hours, but after we have applied security controls:
-Start Time 2023-03-18 15:37
-Stop Time	2023-03-19 15:37
+The following table shows the metrics I measured in my insecure environment inside Microsoft Azure for another 24 hours, but after I applied security controls:
+Start Time 2023-12-12 08:39:53
+Stop Time	2023-12-13 08:39:53
 
 | Metric                   | Count
 | ------------------------ | -----
-| SecurityEvent            | 8778
-| Syslog                   | 25
+| SecurityEvent            | 3
+| Syslog                   | 82
 | SecurityAlert            | 0
 | SecurityIncident         | 0
-| AzureNetworkAnalytics_CL | 0
+
+
+| Change after security environment           | Count
+| ------------------------                    | -----
+| SecurityEvent (Windows VMs)                 | -99.98%
+| Syslog (Linux VMs)                          | -99.40%
+| SecurityAlert (Microsoft Defender for Cloud)| -100%
+| SecurityIncident (Sentinel Incidents)       | -100%
 
 ## Conclusion
 
