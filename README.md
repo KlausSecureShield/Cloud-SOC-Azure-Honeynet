@@ -44,14 +44,18 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 
 
-## Attack Maps 24Hours Before Hardening on the left & 24Hours After Hardening on the Right, for the Windows VM.
+## Attack Maps, 24Hours Before Hardening on the left & 24Hours After Hardening on the Right, for the Windows VM.
 ![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/40583f5b-65eb-4143-bf06-17668a23cb24)
 ```One interesting observation was that during the hardening process 3 attack attempt still made their way through the system, this may be due to a Brute force bot constantly pinging the Windows Vm's IP address. This specific attempt eventually went away after all of the firewall settings were up.``` 
 
-## Attack Maps 24Hours Before Hardening on the left & 24Hours After Hardening on the Right, for the Linux VM.
-![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/40583f5b-65eb-4143-bf06-17668a23cb24)
-```One interesting observation was that during the hardening process 3 attack attempt still made their way through the system, this may be due to a Brute force bot constantly pinging the Windows Vm's IP address. This specific attempt eventually went away after all of the firewall settings were up.``` 
+## Attack Maps, 24Hours Before Hardening on the left & 24Hours After Hardening on the Right, for the Linux VM.
+![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/25fb5ff7-fe20-4d5d-a95b-81c2e920daae)
+```The Linux Vm attack maps showed similar behavior, attacks immediately became less frequent, however a few attempts still made their way to its IP address, however all brute force attempts went way after the 24 hour period.``` 
 
+## Attack Maps, Microsoft SQL server
+![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/109fed3a-2661-43b0-b4ad-1d0c4a9e45b4)
+```as mention earlier "more on this later" This section was added to show some key diffences in the attack locations specifically on Microsoft SQL Servers, initally after being setup, all of the internet traffic only gravitated to the Windows and Linux VMs and were more sporadic, however after a few days, a more consistent type of brute force attacks seem to come from more sophisticated countries like South Korea, Russia and specific areas in the United States, this information should be concerning to any entities runnning SQL servers, to ALWAYS have their machines and networks behind Subnets and Advanced Firewalls with longer more complexed passwords at the very LEAST, no exceptions, because it seems from this traffic map, that just having an enabled SQL database enabled opens you up to a more targeted and advanced type of attack.```  
+ 
 ## Metrics Before Hardening / Security Controls
 
 The following table shows the metrics I measured in my insecure environment inside Microsoft Azure for 24 hours:
