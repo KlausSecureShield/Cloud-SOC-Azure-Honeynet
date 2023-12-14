@@ -1,6 +1,5 @@
-# Cloud-SOC-Azure-Honeynet
+# Building an Azure Cloud-SOC-Honeynet with Live Traffic
 
-# Building a SOC + Honeynet in Azure (Live Traffic)
 ![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/39d30daa-10ad-4f85-acc9-31f732b8987d)
 
 
@@ -8,7 +7,7 @@
 
 In this project, I created a small honeynet using Microsoft Azure. I gathered log information from different sources and stored it in a Log Analytics workspace. I took this data and used Microsoft Sentinel to create attack maps, set off alerts, and manage incidents.
 
-First, I measured some security metrics in the not-so-secure environment for 24 hours. After that, I implemented some security measures to make the environment more secure. Then, I measured the metrics again for another 24 hours. The results and metrics are explained below.
+First, I measured some security metrics in a not-so-secure virtual environment for 24 hours. After that, I implemented some security measures to make the environment more secure. Then, I measured the metrics again for another 24 hours. The results and metrics are explained below.
 
 ## The architecture of the mini honeynet in Azure consists of the following components:
 
@@ -23,29 +22,35 @@ First, I measured some security metrics in the not-so-secure environment for 24 
 - Azure Storage Account
 
 ## The (Azure KQL query) Event Logs used to monitor events:
-- SecurityEvent (are for the Windows Vm Event Logs)
-- Syslog (are for the Linux Event Logs)
-- SecurityAlert (are for the Log Analytics "workspace" alerts)
-- SecurityIncident (Incidents created by Sentinel)
+- SecurityEvent (for the Windows Vm Event Logs)
+- Syslog (for the Linux Event Logs)
+- SecurityAlert (for the Log Analytics "workspace" alerts)
+- SecurityIncident (for Incidents created by Sentinel)
+
 
 ## Architecture Before Hardening / Security Controls
+For the "BEFORE" metrics, all resources were originally deployed and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls configured to be wide open, ```to simulate how bad network settings (with just a few clicks) can instantly make any machine extremely vulnerable```. 
+All other resources were deployed with public endpoints visible to the Internet, such as (Storage, MSSQL servers etc.)
+
 ![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/610a7348-1275-4d6f-b834-ca054fd3694c)
 
 
 
 ## Architecture After Hardening / Security Controls
-![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/30289f44-e249-49f1-9777-7f8f298a375d)
-
-
-For the "BEFORE" metrics, all resources were originally deployed and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls configured to be wide open ```to simulate how bad settings (with just a few clicks) can instantly make any machine extremely vulnerable```. 
-All other resources were deployed with public endpoints visible to the Internet, such as (Azure Key Vault, Storage, MSSQL servers etc.)
 
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoints.
 
-## Attack Maps Before Hardening / Security Controls
-![NSG Allowed Inbound Malicious Flows](https://i.imgur.com/1qvswSX.png)<br>
-![Linux Syslog Auth Failures](https://i.imgur.com/G1YgZt6.png)<br>
-![Windows RDP/SMB Auth Failures](https://i.imgur.com/ESr9Dlv.png)<br>
+![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/30289f44-e249-49f1-9777-7f8f298a375d)
+
+
+
+## Attack Maps 24Hours Before Hardening on the left & 24Hours After Hardening on the Right, for the Windows VM.
+![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/40583f5b-65eb-4143-bf06-17668a23cb24)
+```One interesting observation was that during the hardening process 3 attack attempt still made their way through the system, this may be due to a Brute force bot constantly pinging the Windows Vm's IP address. This specific attempt eventually went away after all of the firewall settings were up.``` 
+
+## Attack Maps 24Hours Before Hardening on the left & 24Hours After Hardening on the Right, for the Linux VM.
+![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/40583f5b-65eb-4143-bf06-17668a23cb24)
+```One interesting observation was that during the hardening process 3 attack attempt still made their way through the system, this may be due to a Brute force bot constantly pinging the Windows Vm's IP address. This specific attempt eventually went away after all of the firewall settings were up.``` 
 
 ## Metrics Before Hardening / Security Controls
 
