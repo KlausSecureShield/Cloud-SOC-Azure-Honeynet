@@ -14,8 +14,8 @@ First, I measured some security metrics in the not-so-secure environment for 24 
 - Virtual Network (VNet)
 - Virtual Machines (VMs) (2 windows, 1 linux)
   
-  ```Also on one of the Windows WMs, I installed and setup a Microsoft SQL server and account to see if anyone on the internet will seek it out and try to attack it, a scenario that many entities may not consider - (more on this later)```
-- Network Security Group (NSG)
+  ```Also within one of the Windows VMs, I installed and setup a Microsoft SQL server and passworded account to see if anyone on the internet will seek it out and try to attack it, a scenario that many entities may not consider - (more on this later)```
+- Network Security Groups (NSGs) (for the Virtual Machines network traffic)
 - Log Analytics Workspace (to store all the data)
 - Azure Key Vault (to test Azure logging)
 - Azure Storage Account
@@ -24,7 +24,7 @@ First, I measured some security metrics in the not-so-secure environment for 24 
 ## The Event Logs
 - SecurityEvent (are for the Windows Vm Event Logs)
 - Syslog (are for the Linux Event Logs)
-- SecurityAlert (are for the Log Analytics WORKSPACE Alerts Triggered)
+- SecurityAlert (are for the Log Analytics "workspace" alerts)
 - SecurityIncident (Incidents created by Sentinel)
 
 ## Architecture Before Hardening / Security Controls
@@ -32,16 +32,6 @@ First, I measured some security metrics in the not-so-secure environment for 24 
 
 ## Architecture After Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
-
-The architecture of the mini honeynet in Azure consists of the following components:
-
-- Virtual Network (VNet)
-- Network Security Group (NSG)
-- Virtual Machines (2 windows, 1 linux)
-- Log Analytics Workspace
-- Azure Key Vault
-- Azure Storage Account
-- Microsoft Sentinel
 
 For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls wide open, and all other resources are deployed with public endpoints visible to the Internet; aka, no use for Private Endpoints.
 
