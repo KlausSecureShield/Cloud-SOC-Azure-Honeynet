@@ -54,7 +54,12 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 ## Attack Maps, Microsoft SQL server
 ![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/109fed3a-2661-43b0-b4ad-1d0c4a9e45b4)
-```as mention earlier "more on this later" This section was added to show some key differences in the attack locations specifically on Microsoft SQL Servers, initally after being setup, all of the internet traffic only gravitated to the Windows and Linux VMs and were more sporadic, however after a few days, a more consistent type of brute force attacks seem to come from more sophisticated countries like South Korea, Russia and specific areas in the United States, this information should be concerning to any entity runnning SQL servers, to ALWAYS have their machines and networks behind Subnets and Advanced Firewalls with longer more complexed passwords at the very LEAST, no exceptions, because it seems from this traffic map, that just having an enabled SQL database enabled opens you up to a more targeted and advanced type of attack.```  
+This is the attack map for the Microsoft SQL server on the Windows Vm over a 30 day period, this section was added to show some key differences in the attack locations specifically on Microsoft SQL Servers, initally after being setup, all of the internet traffic only gravitated to the Windows and Linux VMs and were more sporadic, however after a few days, a more consistent type of brute force attacks seem to come from more sophisticated countries like South Korea, Russia and specific areas in the United States, this information should be concerning to any entity runnning SQL servers, to ALWAYS have their machines and networks behind Subnets and Advanced Firewalls with longer more complexed passwords at the very LEAST, no exceptions, because it seems from this traffic map, that just having an enabled SQL database opens you up to a more targeted and advanced type of threat, as I will show in the next picture below and then explain```  
+
+![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/5eb79d82-cf25-46e9-a1ee-ccdb699b0462)
+
+```This picture above is the attack map for the same Microsoft SQL Server 24 hours before hardening my network. Notice once again similar threat behavior as mentioned above, the attacks are still persistent but only from a few key locations that seem to be more tech savvy, and not more random like the Windows and Linux attack maps. I fell like this detail should not be overlooked as it was not a planned part of this project and can be a valuable metric to someone reading this.```
+
  
 ## Metrics Before Hardening / Security Controls
 
