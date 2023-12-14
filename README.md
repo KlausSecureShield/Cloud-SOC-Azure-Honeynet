@@ -15,13 +15,14 @@ First, I measured some security metrics in the not-so-secure environment for 24 
 - Virtual Network (VNet)
 - Virtual Machines (VMs) (2 windows, 1 linux)
   
-  ```Also within one of the Windows VMs, I installed and setup a Microsoft SQL server and passworded account to see if anyone on the internet will seek it out and try to attack it, a scenario that many entities may not consider - (more on this later)```
+  ```Also within one of the Windows VMs, I installed and setup a Microsoft SQL server and password SQL account to see if anyone on the internet will seek it out and try to attack it, a scenario that many entities may not consider - (more on this later.)```
+  ```The second Windows VM was set up as an outside attacker, so I could also pose as a potential bad actor against the exposed VMs as well.```
 - Network Security Groups (NSGs) (for the Virtual Machines network traffic)
 - Log Analytics Workspace (to store all the data)
 - Microsoft Sentinel (for attack maps, incidents and alerts)
 - Azure Storage Account
 
-## The (Azure KQL queries) Event Logs used to monitor events:
+## The (Azure KQL query) Event Logs used to monitor events:
 - SecurityEvent (are for the Windows Vm Event Logs)
 - Syslog (are for the Linux Event Logs)
 - SecurityAlert (are for the Log Analytics "workspace" alerts)
