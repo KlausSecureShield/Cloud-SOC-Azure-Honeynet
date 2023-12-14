@@ -1,7 +1,8 @@
 # Cloud-SOC-Azure-Honeynet
 
 # Building a SOC + Honeynet in Azure (Live Traffic)
-![Cloud Honeynet / SOC](https://i.imgur.com/ZWxe03e.jpg)
+![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/39d30daa-10ad-4f85-acc9-31f732b8987d)
+
 
 ## Introduction
 
@@ -27,10 +28,13 @@ First, I measured some security metrics in the not-so-secure environment for 24 
 - SecurityIncident (Incidents created by Sentinel)
 
 ## Architecture Before Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
+![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/610a7348-1275-4d6f-b834-ca054fd3694c)
+
+
 
 ## Architecture After Hardening / Security Controls
-![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
+![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/30289f44-e249-49f1-9777-7f8f298a375d)
+
 
 For the "BEFORE" metrics, all resources were originally deployed and exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls configured to be wide open ```to simulate how bad settings (with just a few clicks) can instantly make any machine extremely vulnerable```. 
 All other resources were deployed with public endpoints visible to the Internet, such as (Azure Key Vault, Storage, MSSQL servers etc.)
