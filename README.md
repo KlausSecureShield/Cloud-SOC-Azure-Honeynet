@@ -17,9 +17,8 @@ First, I measured some security metrics in the not-so-secure environment for 24 
   ```Also within one of the Windows VMs, I installed and setup a Microsoft SQL server and passworded account to see if anyone on the internet will seek it out and try to attack it, a scenario that many entities may not consider - (more on this later)```
 - Network Security Groups (NSGs) (for the Virtual Machines network traffic)
 - Log Analytics Workspace (to store all the data)
-- Azure Key Vault (to test Azure logging)
-- Azure Storage Account
 - Microsoft Sentinel (for attack maps, incidents and alerts)
+- Azure Storage Account
 
 ## The (Azure KQL queries) Event Logs used to monitor events:
 - SecurityEvent (are for the Windows Vm Event Logs)
@@ -86,3 +85,7 @@ Stop Time	2023-12-13 08:39:53
 In this project, a mini honeynet was constructed in Microsoft Azure and log sources were integrated into a Log Analytics workspace. Microsoft Sentinel was employed to trigger alerts and create incidents based on the ingested logs. Additionally, metrics were measured in the insecure environment before security controls were applied, and then again after implementing security measures. It is noteworthy that the number of security events and incidents were drastically reduced after the security controls were applied, demonstrating their effectiveness.
 
 It is worth noting that if the resources within the network were heavily utilized by regular users, it is likely that more security events and alerts may have been generated within the 24-hour period following the implementation of the security controls.
+
+If you would like to know more, enjoyed my report, have any comments or questions, please reach out to me here http://www.linkedin.com/in/klausSecOps-ln
+
+
