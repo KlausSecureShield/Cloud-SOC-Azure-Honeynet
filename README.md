@@ -33,7 +33,8 @@ First, I measured some security metrics in the not-so-secure environment for 24 
 ## Architecture After Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/YQNa9Pp.jpg)
 
-For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls configured wide open ```to simulate how bad settings can instantly make any machine extremely vulnerable```, and all other resources were deployed with public endpoints visible to the Internet.
+For the "BEFORE" metrics, all resources were originally deployed, exposed to the internet. The Virtual Machines had both their Network Security Groups and built-in firewalls configured to be wide open ```to simulate how bad settings (with just a few clicks) can instantly make any machine extremely vulnerable```. 
+All other resources were deployed with public endpoints visible to the Internet, such as (Azure Key Vault, Storage, MSSQL servers etc.)
 
 For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL traffic with the exception of my admin workstation, and all other resources were protected by their built-in firewalls as well as Private Endpoints.
 
