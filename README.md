@@ -5,13 +5,27 @@
 
 ## Introduction
 
-In this project, I build a mini honeynet in Azure and ingest log sources from various resources into a Log Analytics workspace, which is then used by Microsoft Sentinel to build attack maps, trigger alerts, and create incidents. I measured some security metrics in the insecure environment for 24 hours, apply some security controls to harden the environment, measure metrics for another 24 hours, then show the results below. The metrics we will show are:
+In this project, I created a small honeynet using Microsoft Azure. I gathered log information from different sources and stored it in a Log Analytics workspace. I took this data and used Microsoft Sentinel to create attack maps, set off alerts, and manage incidents.
 
-- SecurityEvent (Windows Event Logs)
-- Syslog (Linux Event Logs)
-- SecurityAlert (Log Analytics Alerts Triggered)
+First, I measured some security metrics in the not-so-secure environment for 24 hours. After that, I implemented some security measures to make the environment more secure. Then, I measured the metrics again for another 24 hours. The results and metrics are explained below.
+
+## The architecture of the mini honeynet in Azure consists of the following components:
+
+- Virtual Network (VNet)
+- Virtual Machines (VMs) (2 windows, 1 linux)
+  
+  ```Also on one of the Windows WMs, I installed and setup a Microsoft SQL server and account to see if anyone on the internet will seek it out and try to attack it, a scenario that many entities may not consider - (more on this later)```
+- Network Security Group (NSG)
+- Log Analytics Workspace (to store all the data)
+- Azure Key Vault (to test Azure logging)
+- Azure Storage Account
+- Microsoft Sentinel (for attack maps, incidents and alerts)
+
+## The Event Logs
+- SecurityEvent (are for the Windows Vm Event Logs)
+- Syslog (are for the Linux Event Logs)
+- SecurityAlert (are for the Log Analytics WORKSPACE Alerts Triggered)
 - SecurityIncident (Incidents created by Sentinel)
-- AzureNetworkAnalytics_CL (Malicious Flows allowed into our honeynet)
 
 ## Architecture Before Hardening / Security Controls
 ![Architecture Diagram](https://i.imgur.com/aBDwnKb.jpg)
