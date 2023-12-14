@@ -46,7 +46,7 @@ For the "AFTER" metrics, Network Security Groups were hardened by blocking ALL t
 
 ## Attack Maps, 24Hours Before Hardening on the left & 24Hours After Hardening on the Right, for the Windows VM.
 ![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/40583f5b-65eb-4143-bf06-17668a23cb24)
-```One interesting observation was that during the hardening process 3 attack attempt still made their way through the system, this may be due to a Brute force bot constantly pinging the Windows Vm's IP address. This specific attempt eventually went away after all of the firewall settings were up.``` 
+```One interesting observation was that during the hardening process 3 attack attempts still made their way through the system, this may be due to a Brute force bot constantly pinging the Windows Vm's IP address. This specific attempt eventually went away after all of the firewall settings were up.``` 
 
 ## Attack Maps, 24Hours Before Hardening on the left & 24Hours After Hardening on the Right, for the Linux VM.
 ![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/25fb5ff7-fe20-4d5d-a95b-81c2e920daae)
