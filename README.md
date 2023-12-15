@@ -77,7 +77,7 @@ Stop Time 2023-12-10 14:43:24
 
 ## Metrics After Hardening / Security Controls
 
-The following table shows the metrics I measured in my insecure environment inside Microsoft Azure for another 24 hours, but after I applied security controls:
+The following table shows the metrics I measured in my environment inside Microsoft Azure for another 24 hours, after I applied security controls:
 Start Time 2023-12-12 08:39:53
 Stop Time	2023-12-13 08:39:53
 
