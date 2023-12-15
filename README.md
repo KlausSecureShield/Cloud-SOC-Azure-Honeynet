@@ -74,9 +74,6 @@ Stop Time 2023-12-10 14:43:24
 | SecurityAlert            | 18
 | SecurityIncident         | 159
 
-## Attack Maps After Hardening / Notes
-
-```All map queries actually returned no results due to no instances of malicious activity for the 24 hour period after hardening. A few attacks did register at the beginning of the hardening process, they occured due to bots that were relentlessly spamming the exposed (open to the internet) Windows and Linux VMs during the hardening transition and stopped occuring after hardening was completed.```
 
 ## Metrics After Hardening / Security Controls
 
