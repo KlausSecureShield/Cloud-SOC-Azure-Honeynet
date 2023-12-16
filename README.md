@@ -1,13 +1,13 @@
-# Building a Azure Cloud, SOC+Honeynet using (Live Traffic)
+# Building an Azure Cloud SOC and Honeynet with Live Traffic
 
 ![image](https://github.com/KlausSecureShield/Cloud-SOC-Azure-Honeynet/assets/153767032/39d30daa-10ad-4f85-acc9-31f732b8987d)
 
 
 ## Introduction
+The intent of this project was to learn about and raise awareness of the vulnerabilities inherent in open networks.
+I explored the vulnerabilities of open networks by creating a honeynet on Microsoft Azure. I gathered data from various sources, utilizing Log Analytics and Microsoft Sentinel to analyze and manage incidents.
 
-In this project, I created a small honeynet using Microsoft Azure. I gathered log information from various sources and stored it in a Log Analytics workspace. I took this data and used Microsoft Sentinel to create attack maps, trigger alerts, and manage incidents.
-
-First, I measured some security metrics in a not-so-secure virtual environment for 24 hours. After that, I implemented some security measures to enhance the environment's security. Then, I measured the metrics again for another 24 hours. The results and metrics are explained below.
+I started by measuring security metrics in a less secure virtual environment for 24 hours. After implementing enhanced security measures, I measured the metrics again for another 24 hours. The results and insights are detailed below.
 
 ## The architecture of the mini honeynet in Azure consists of the following components:
 
